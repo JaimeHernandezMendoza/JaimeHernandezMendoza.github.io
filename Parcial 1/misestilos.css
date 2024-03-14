@@ -1,0 +1,21 @@
+.parrafo{
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px;
+    padding: 15px;
+    color: blueviolet;
+    font-size: large;
+    font-weight: 500;
+}
+
+div{
+    border: 2px solid yellow;
+    color: brown;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+span ul li{
+    color: chartreuse;
+    font-style: oblique;
+    font-weight: 700;
+}
