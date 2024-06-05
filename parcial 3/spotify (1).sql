@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-05-2024 a las 04:40:24
+-- Tiempo de generación: 05-06-2024 a las 02:58:10
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -44,11 +44,11 @@ INSERT INTO `artistas` (`id`, `nombre`, `descripcion`) VALUES
 (3, 'Ariana Grande', ''),
 (4, 'justin Bieber', ''),
 (5, 'Drake', ''),
-(6, 'Dua lipa', ''),
-(7, 'Shakira', ''),
-(8, 'Bruno MNars', ''),
+(6, 'Valentin elizalde', ''),
+(7, 'Gabito Ballesteros', ''),
+(8, 'Natanael Cano', ''),
 (9, 'Eminem', ''),
-(10, 'Six Nine', '');
+(10, 'Peso Pluma', '');
 
 -- --------------------------------------------------------
 
@@ -78,6 +78,22 @@ CREATE TABLE `canciones` (
   `foto` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `canciones`
+--
+
+INSERT INTO `canciones` (`id`, `nombre`, `genero_id`, `duracion`, `fecha`, `activo`, `foto`) VALUES
+(1, 'espresso', 4, '00:02:55', '2024-04-12', 1, 'la artista sabrina en la portada'),
+(2, 'havanna', 4, '00:03:37', '2017-08-03', 1, 'camila cabello en una silla '),
+(3, 'back in black', 6, '00:04:14', '1980-07-25', 1, 'portada de la banda y sus iniciales ac dc'),
+(4, 'lose yourself', 5, '00:05:20', '2002-10-28', 1, 'eminem en el autobus de la pelicula 8mile'),
+(5, 'all that matters', 1, '00:03:41', '2013-12-13', 1, 'el artista justin y una chica bailando'),
+(6, 'we belong together', 3, '00:01:58', '1959-02-03', 0, 'el cantante con su guitarra'),
+(7, 'lunch', 4, '00:03:00', '2024-05-22', 1, 'ella con gorra y cadenas'),
+(8, 'houdini', 4, '00:03:09', '2023-10-09', 0, ''),
+(9, 'redrum', 5, '00:04:26', '2024-01-11', 1, 'el de niño'),
+(10, 'not like us', 5, '00:04:33', '2024-05-04', 1, 'la casa de drake');
+
 -- --------------------------------------------------------
 
 --
@@ -106,14 +122,14 @@ CREATE TABLE `genero` (
 --
 
 INSERT INTO `genero` (`id`, `nombre`) VALUES
-(1, 'Jazz'),
+(1, 'R&B'),
 (2, 'K-POP'),
 (3, 'Rock and roll'),
 (4, 'Pop'),
 (5, 'Rap'),
-(6, 'Funk'),
+(6, 'Metal\r\n'),
 (7, 'Reggae'),
-(8, 'Salsa');
+(8, 'Jazz\r\n');
 
 -- --------------------------------------------------------
 
@@ -178,6 +194,22 @@ CREATE TABLE `usuarios` (
   `correo` varchar(150) NOT NULL,
   `membresia_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `membresia_id`) VALUES
+(1, 'jaime fernando hernández mendoza', 'jhm@gmail.com', 6),
+(2, 'Larissa bejarano felix', 'larb7@gmail.com', 5),
+(3, 'Marco aguiluz ibarra', 'marcoagui7@gmail.com', 6),
+(4, 'Angel saul rojo lopez', 'angsaul@gmail.com', 4),
+(5, 'jose angel perez lopez', 'josee7@gmail.com', 6),
+(6, 'Fernando moreno madrigal', 'fermoreno@hotmail.com', 7),
+(7, 'alonso mamahua aguerrebere', 'alonso67@hotmail.com', 7),
+(8, 'Julio iglesias monzon', 'juli786@hotmail.com', 5),
+(9, 'maria castro torres', 'mariacastorr@hotmail.com', 5),
+(10, 'Raul garcia cuadras', 'raulgarcua@hotmail.com', 4);
 
 --
 -- Índices para tablas volcadas
@@ -261,13 +293,13 @@ ALTER TABLE `artistas`
 -- AUTO_INCREMENT de la tabla `artistas y canciones`
 --
 ALTER TABLE `artistas y canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritas`
@@ -303,7 +335,7 @@ ALTER TABLE `playlist canciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
