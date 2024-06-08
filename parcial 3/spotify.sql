@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-06-2024 a las 03:54:45
--- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Tiempo de generación: 08-06-2024 a las 03:50:28
+-- Versión del servidor: 10.1.39-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -61,6 +62,13 @@ CREATE TABLE `artistas y canciones` (
   `cancion_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `artistas y canciones`
+--
+
+INSERT INTO `artistas y canciones` (`id`, `artistas_id`, `cancion_id`) VALUES
+(25, 9, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -77,6 +85,22 @@ CREATE TABLE `canciones` (
   `foto` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `canciones`
+--
+
+INSERT INTO `canciones` (`id`, `nombre`, `genero_id`, `duracion`, `fecha`, `activo`, `foto`) VALUES
+(1, 'espresso', 4, '00:02:55', '2024-04-12', 1, 'la artista sabrina en la portada'),
+(2, 'havanna', 4, '00:03:37', '2017-08-03', 1, 'camila cabello en una silla '),
+(3, 'back in black', 6, '00:04:14', '1980-07-25', 1, 'portada de la banda y sus iniciales ac dc'),
+(4, 'lose yourself', 5, '00:05:20', '2002-10-28', 1, 'eminem en el autobus de la pelicula 8mile'),
+(5, 'all that matters', 1, '00:03:41', '2013-12-13', 1, 'el artista justin y una chica bailando'),
+(6, 'we belong together', 3, '00:01:58', '1959-02-03', 0, 'el cantante con su guitarra'),
+(7, 'lunch', 4, '00:03:00', '2024-05-22', 1, 'ella con gorra y cadenas'),
+(8, 'houdini', 4, '00:03:09', '2023-10-09', 0, ''),
+(9, 'redrum', 5, '00:04:26', '2024-01-11', 1, 'el de niño'),
+(10, 'not like us', 5, '00:04:33', '2024-05-04', 1, 'la casa de drake');
+
 -- --------------------------------------------------------
 
 --
@@ -88,6 +112,13 @@ CREATE TABLE `favoritas` (
   `usuario_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `favoritas`
+--
+
+INSERT INTO `favoritas` (`id`, `usuario_id`, `cancion_id`) VALUES
+(1, 1, 9);
 
 -- --------------------------------------------------------
 
@@ -152,6 +183,13 @@ CREATE TABLE `playlist` (
   `publico` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `playlist`
+--
+
+INSERT INTO `playlist` (`id`, `nombre`, `usuario_id`, `duracion`, `total_can`, `descripcion`, `publico`) VALUES
+(1, 'canciones español', 1, '02:03:00', 25, 'playlist con canciones en español', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -164,6 +202,13 @@ CREATE TABLE `playlist canciones` (
   `cancion_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `playlist canciones`
+--
+
+INSERT INTO `playlist canciones` (`id`, `playlist_id`, `cancion_id`, `usuario_id`) VALUES
+(1, 1, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -276,19 +321,19 @@ ALTER TABLE `artistas`
 -- AUTO_INCREMENT de la tabla `artistas y canciones`
 --
 ALTER TABLE `artistas y canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritas`
 --
 ALTER TABLE `favoritas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `genero`
@@ -306,13 +351,13 @@ ALTER TABLE `membresia`
 -- AUTO_INCREMENT de la tabla `playlist`
 --
 ALTER TABLE `playlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `playlist canciones`
 --
 ALTER TABLE `playlist canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
