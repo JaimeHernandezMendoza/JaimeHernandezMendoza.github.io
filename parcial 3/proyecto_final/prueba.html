@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto final Parcial #3</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-3.7.1.js"></script>
 </head>
 <body>
+    <div class="container">
+        <h1>Proyecto final parcial 3</h1>
+        <div class="row mt-2">
+            <div class="col">
+                <h3 class="card">SELECT * FROM alumno;</h3>
+                <p>Consulta #1. Obtener el listado de todos los alumnos de la facultad.</p>
+                <img src="consulta.png" alt="" class="img-fluid">
+
+                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <p>Consulta #2. Obtener listado de cursos(nombre) y las asignaturas que tiene.</p>
+                <img src="Captura2.png" alt="" class="img-fluid">
+
+                <h3>SELECT nombre, apellido1, apellido2 FROM alumno WHERE beca LIKE "si"</h3>
+                <p>Consulta #3. Obtener listado (nombre y apellido) de alumnos que tengan beca.</p>
+                <img src="Captura3.png" alt="" class="img-fluid">
+                
+                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <p>Consulta #4. Obtener listado de profesores (nombre, apellido), y su numero de contacto.</p>
+                <img src="Captura4.png" alt="" class="img-fluid">
+
+                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <p>Consulta #5. Obtener listado de alumnos (todos los campos) que están inscritos a la asignatura de programación.</p>
+                <img src="Captura5.png" alt="" class="img-fluid">
+
+                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <p>Consulta #6. Obtener listado de profesores y asignaturas que imparten.</p>
+                <img src="Captura6.png" alt="" class="img-fluid">
+
+                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <p>Consulta #7. Mostrar la asignatura que tiene mas alumnos inscritos y su total.</p>
+                <img src="Captura7.png" alt="" class="img-fluid">
+
+                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <p>Consulta #8. Obtener listado de alumnos que les da clase el profesor con id PR048 (Jose manuel), sin importar en que asignatura esté inscrito.</p>
+                <img src="Captura8.png" alt="" class="img-fluid">
+
+                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <p>Consulta #9. </p>
+                <img src="Captura9.png" alt="" class="img-fluid">
+
+                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <p>Consulta #10.</p>
+                <img src="Captura10.png" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+  <script src="js/bootstrap.js"></script>
     Hernández Mendoza Jaime Fernando
 </body>
 </html>
