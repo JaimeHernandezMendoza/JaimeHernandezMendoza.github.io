@@ -32,25 +32,52 @@
                 <p>Consulta #5. Obtener listado de alumnos (todos los campos) que están inscritos a la asignatura de programación.</p>
                 <img src="Captura5.png" alt="" class="img-fluid">
 
-                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <h3>SELECT profesor.*, asignatura.* FROM profesor INNER JOIN asignatura ON profesor.idProfesor = asignatura.coordinador ORDER BY profesor.nombre, asignatura.nombre</h3>
                 <p>Consulta #6. Obtener listado de profesores y asignaturas que imparten.</p>
-                <img src="Captura6.png" alt="" class="img-fluid">
+                <img src="Captura6.PNG" alt="" class="img-fluid">
 
-                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <h3>SELECT asignatura.nombre AS nombre_asignatura, COUNT(matricula.idAlumno) AS total_alumnos_inscritos FROM asignatura INNER JOIN matricula ON asignatura.idAsignatura = matricula.idAsignatura GROUP BY asignatura.idAsignatura ORDER BY total_alumnos_inscritos DESC</h3>
                 <p>Consulta #7. Mostrar la asignatura que tiene mas alumnos inscritos y su total.</p>
-                <img src="Captura7.png" alt="" class="img-fluid">
+                <img src="Captura7.PNG" alt="" class="img-fluid">
 
-                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <h3>SELECT alumno.* FROM alumno INNER JOIN matricula ON alumno.idAlumno = matricula.idAlumno INNER JOIN asignatura ON matricula.idAsignatura = asignatura.idAsignatura WHERE asignatura.coordinador = 'PR016'</h3>
                 <p>Consulta #8. Obtener listado de alumnos que les da clase el profesor con id PR048 (Jose manuel), sin importar en que asignatura esté inscrito.</p>
-                <img src="Captura8.png" alt="" class="img-fluid">
+                <img src="Captura8.PNG" alt="" class="img-fluid">
 
-                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <h3>SELECT c.idCurso, c.nombreDescriptivo AS nombre_curso, a.idAsignatura, a.nombre AS nombre_asignatura, p.idProfesor, p.nombre AS nombre_profesor, p.apellido1 AS apellido1_profesor, p.apellido2 AS apellido2_profesor FROM curso c JOIN asignatura a ON c.idCurso = a.curso JOIN impartir i ON a.idAsignatura = i.idAsignatura JOIN profesor p ON i.idProfesor = p.idProfesor ORDER BY c.idCurso, a.idAsignatura, p.idProfesor</h3>
                 <p>Consulta #9. </p>
-                <img src="Captura9.png" alt="" class="img-fluid">
+                <img src="Captura9.PNG" alt="" class="img-fluid">
 
-                <h3>SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h3>
+                <h3>SELECT
+                    al.idAlumno,
+                    al.nombre AS nombre_alumno,
+                    al.apellido1 AS apellido1_alumno,
+                    al.apellido2 AS apellido2_alumno,
+                    a.idAsignatura,
+                    a.nombre AS nombre_asignatura,
+                    p.idProfesor,
+                    p.nombre AS nombre_profesor,
+                    p.apellido1 AS apellido1_profesor,
+                    p.apellido2 AS apellido2_profesor,
+                    c.idCurso,
+                    c.nombreDescriptivo AS nombre_curso
+                    FROM
+                    alumno al
+                    JOIN
+                    matricula m ON al.idAlumno = m.idAlumno
+                    JOIN
+                    asignatura a ON m.idAsignatura = a.idAsignatura
+                    JOIN
+                    impartir i ON a.idAsignatura = i.idAsignatura
+                    JOIN
+                    profesor p ON i.idProfesor = p.idProfesor
+                    JOIN
+                    curso c ON a.curso = c.idCurso
+                    ORDER BY
+                    al.idAlumno, a.idAsignatura
+                    </h3>
                 <p>Consulta #10.</p>
-                <img src="Captura10.png" alt="" class="img-fluid">
+                <img src="Captura10.PNG" alt="" class="img-fluid">
             </div>
         </div>
     </div>
