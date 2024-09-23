@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen en línea</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <form action="practica4.php" method="POST">
+            <div class="row">
+                <h1>Exámen de programación - Alumno: Jaime Fernando Hernández Mendoza 5AVP</h1><hr>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                         <P style="color: red;">1. ¿Pais con más mundiales ganados de la historia?</P> 
+                        </div>
+                        <div class="card-body">
+                            <p><input type="radio" name="pregunta1" value="ALEMANIA" required> ALEMANIA </p>
+                            <p><input type="radio" name="pregunta1" value="ARGENTINA" required> ARGENTINA </p>
+                            <p><input type="radio" name="pregunta1" value="BRASIL" required checked> BRASIL </p>
+                        </div>
+                    </div>
+                    <div class="card p-4 mb-4">
+                        <p>
+                            2. <input type="text" name="pregunta2"> es la actual campeona del Mundo.
+                        </p>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <P style="color: blue;">3. ¿Son los dos jugadores con mas balones de oro? (Selecciona 2)</P> 
+                            
+                        </div>
+                        <div class="card-body">
+                            <p><input type="checkbox" name="pregunta3[]" value="messi" checked> Messi </p>
+                            <p><input type="checkbox" name="pregunta3[]" value="cristiano" checked> CRISTIANO </p>
+                            <p><input type="checkbox" name="pregunta3[]" value="neymar" > NEYMAR </p>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <P style="color: yellow;">4. ¿En que año fue disputado el ultimo mundial en MÉXICO?</P> 
+                        
+                        </div>
+                        <div class="card-body">
+                            <p><input type="radio" name="pregunta4" value="MEXICO = 2002;" required> MEXICO = 2002; </p>
+                            <p><input type="radio" name="pregunta4" value="MEXICO = 1990;" required> MEXICO = 1990; </p>
+                            <p><input type="radio" name="pregunta4" value="MEXICO = 1986;" required checked> MEXICO = 1986; </p>
+                        </div>
+                    </div>
+                    <div class="card p-4 mb-4">
+                        <p style="color: violet;">
+                             <input type="text" name="pregunta5"> 5. es el equipo con más champions league.
+                            
+                        </p>
+                    </div>
+                    <div class="card mb-4"></div>
+                        <div class="card-header">
+                            <P style="color: rgb(0, 255, 229);">  6. ¿Cuál es el nombre del estadio donde juega el FC Barcelona?</P> 
+                        </div>
+                        <div class="card-body">
+                            <p><input type="radio" name="pregunta6" value="SANTIAGO BERNABEU" required> SANTIAGO BERNABEU </p>
+                            <p><input type="radio" name="pregunta6" value="CAMP NOU" required> CAMP NOU </p>
+                            <p><input type="radio" name="pregunta6" value="OLD TRAFFORD" required checked> OLD TRAFFORD </p>
+                        </div>
+                    </div>
+                    <div class="card mb-4"></div>
+                        <div class="card-header">
+                            <P style="color: rgb(255, 0, 85);">7. ¿Ganador actual de la Eurocopa Y de la copa america? (Selecciona 2)</P> 
+
+                        
+                        </div>
+                        <div class="card-body">
+                            <p><input type="checkbox" name="pregunta7[]" value="inglaterra" checked> INGLATERRA </p>
+                            <p><input type="checkbox" name="pregunta7[]" value="argentina" checked> Argentina </p>
+                            <p><input type="checkbox" name="pregunta7[]" value="colombia" > COLOMBIA </p>
+                            <p><input type="checkbox" name="pregunta7[]" value="españa" > ESPAÑA </p>
+                        </div>
+                        
+                        <div class="card mb-4"></div>
+                        <div class="card-header">
+                            <P style="color: rgb(0, 255, 123);">  8. ¿Quién es el máximo goleador de la historia de la UEFA Champions League?</P> 
+                        </div>
+                        <div class="card-body">
+                            <p><input type="radio" name="pregunta8" value="VINI JR" required> VINI JR </p>
+                            <p><input type="radio" name="pregunta8" value="BELLINGHAM" required> BELLINGHAM </p>
+                            <p><input type="radio" name="pregunta8" value="CRISTIANO RONALDO" required checked> CRISTIANO RONALDO </p>
+                        </div>
+                    </div>
+
+                    <div class="card p-4 mb-4"></div>
+                        <p style="color: violet;">
+                             <input type="text" name="pregunta9"> 9. es el nuevo jugador francés del real madrid.
+                            
+                        </p>
+                    </div>
+
+                    <div class="card mb-4"></div>
+                        <div class="card-header">
+                            <P style="color: rgb(55, 0, 255);">10. ¿De que color son las tarjetas del arbitro? (Selecciona 2)</P> 
+
+                        
+                        </div>
+                        <div class="card-body">
+                            <p><input type="checkbox" name="pregunta10[]" value="azul" checked> azul </p>
+                            <p><input type="checkbox" name="pregunta10[]" value="roja" checked> rojo </p>
+                            <p><input type="checkbox" name="pregunta10[]" value="verde" > verde </p>
+                            <p><input type="checkbox" name="pregunta10[]" value="amarilla" > amarilla </p>
+                        </div>
+            </div>
+            <br><input type="submit" class="btn btn-primary" value="Terminar examen">
+        </form>
+    </div>
+</body>
+</html>
